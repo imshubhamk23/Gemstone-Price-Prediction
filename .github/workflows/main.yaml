@@ -88,9 +88,9 @@ jobs:
 
       # uncomment the below code of stop and remove after the deployment is complete this is useful if we make any changes in code after deployment
 
-      # - name: Stop and remove  container if running
-      #   run: |
-      #    docker ps -q --filter "name=mltest" | grep -q . && docker stop mltest && docker rm -fv mltest
+      - name: Stop and remove  container if running
+        run: |
+         docker ps -q --filter "name=mltest" | grep -q . && docker stop mltest && docker rm -fv mltest
        
       - name: Run Docker Image to serve users
         run: |
